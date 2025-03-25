@@ -13,7 +13,7 @@ class Book {
         if (typeof value === 'string') {
             this._title = value;
         } else {
-            console.error('Title must be a string');
+            throw new Error('Title must be a string');
         }
     }
 
@@ -25,7 +25,7 @@ class Book {
         if (typeof value === 'string') {
             this._author = value;
         } else {
-            console.error('Author must be a string');
+            throw new Error('Author must be a string');
         }
     }
 
@@ -37,14 +37,13 @@ class Book {
         if (typeof value === 'number' && value > 0) {
             this._year = value;
         } else {
-            console.error('Year must be a valid number');
+            throw new Error('Year must be a valid number');
         }
     }
 
     printInfo() {
         console.log(`Title: ${this._title}, Author: ${this._author}, Year: ${this._year}`);
     }
-
 
     static getOldestBook(booksArray) {
         return booksArray.reduce((oldest, currentBook) => {

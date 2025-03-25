@@ -16,14 +16,14 @@ class EBook extends Book {
         if (validFormats.includes(value)) {
             this._fileFormat = value;
         } else {
-            console.error('File format must be one of the following: PDF, EPUB, DOCX');
+            throw new Error('File format must be one of the following: PDF, EPUB, DOCX');
         }
     }
 
     printInfo() {
-        super.printInfo();
-        console.log(`File Format: ${this._fileFormat}`);
+        console.log(`Title: ${this._title}, Author: ${this._author}, Year: ${this._year}, File Format: ${this._fileFormat}`);
     }
+
 
     static createFromBook(book, fileFormat) {
         if (book instanceof Book && typeof fileFormat === 'string') {
