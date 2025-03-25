@@ -6,3 +6,7 @@ const users = [
 for (const {name, age, email} of users) {
     console.log(`${name}, ${age}, ${email}`);
   }
+
+for (const user of users) {
+    console.log(`${user.name}, ${user.age}, ${user.email}`);
+  }
